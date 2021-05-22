@@ -1,0 +1,34 @@
+.navbar {
+    background: linear-gradient(
+        90deg, 
+        rgb(8, 8, 8) 0%, 
+        rgb(250, 247, 247) 120%);
+        /*smooth transitions between two colors*/
+    height: 80px;
+    display: flex; /*Display behavior*/
+    align-items: left;/*aligns text vertically?*/
+    font-size: 1.2rem;
+    position: sticky;/*sticks to top when you scroll down*/
+    top: 0;
+    z-index: 999;/*stack order: in front, behind etc*/
+    box-shadow: 0 10px 10px rgba(4, 9, 17, 0.17);
+    /*shadow*/
+  }
+  
+.navbar-container {
+display: flex;
+align-items: left;
+height: 80px;
+max-width: 1500px;
+}
+
+.navbar-header {
+color: #fff;
+margin-left: 20px;
+text-decoration: none;/*remove underline from link*/
+font-size: 2rem;
+display: flex;
+align-items: center;
+}
+
+
