@@ -2,11 +2,16 @@ import React from 'react'
 import './CardsContainer.css'
 import Card from './Card'
 
+
+
 function CardsContainer() {
-    let num = 0;
-    const giveInfo=(props)=>{
-        num = props;
-    }
+    let num = 50;
+    
+    function giveInfo()
+        {
+           
+        };
+    
     return (
         <div className= 'CC-maintainance-section'>
             <div className = 'CC-header-section'>
@@ -35,10 +40,16 @@ function CardsContainer() {
                 </div>
             </div>
             <div className= 'CC-cards-section'>
-            <Card
+                
+             <Card
                 name='testBar'
                 bgcolor='blue'
-                completed= {num}
+                inputYears= {num}
+                inputDays ={num}
+                inputHours ={num}
+                inputMinutes ={num}
+                inputSeconds ={num}
+
             >
 
             </Card>

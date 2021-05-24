@@ -12,12 +12,39 @@
     height: 150px;
     width: 25%;
 }
+.cardTitle{
+    margin: -15px;
+    
+}
+.timer-container{
+    height: 60%;
+    width: 100%;
+}
+
+.timer-container > div{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: -15px;
+    /*1 fraction 9 times*/
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    gap: 0px 0px;
+}
+section p{
+   
+    font-size: 15px;
+
+}
+
 .barContainer{
     height: 20px;
-    width: 100px;
+    width: 80%;
     background-color: #e0e0de;
-    border-radius: 50px;
-    margin: 50px;
+    border-radius: 20px;
+    
 
 }
 .barFilling{
@@ -27,7 +54,7 @@
 }
 
 .barText{
-    padding: 5;
     color: white;
     font-weight: bold;
+    font-size: 10px;
 }
