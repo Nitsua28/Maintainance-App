@@ -1,6 +1,8 @@
 import React, {useState, useRef, useEffect, Component} from 'react'
 import './Card.css'
 
+const countDownDate = 0;
+const newMilli = 0;
 function Card(props) {
 
     const {
@@ -10,24 +12,21 @@ function Card(props) {
         inputDays, 
         inputHours,  
         inputMinutes,
-        inputSeconds
+        inputSeconds,
+        inputNow
     } = props;
     
-    const newMilli = 0;
-    const percent = 0;
-    const calculate=()=>{
-        const now = new Date();
-        const newMilli = (now.getFullYear() + inputYears)*(1000 * 60 * 60 * 24 * 365)
-                        + (now.getDates() + inputDays)*(1000 * 60 * 60 * 24)
-                        +  (now.getHours() + inputHours)*(1000 * 60 * 60)
-                        +  (now.getMinutes() + inputMinutes)*(1000 * 60)
-                        +  (now.getSeconds() + inputSeconds)*(1000);
-    }
-    calculate();
-    const attributes ={
-        width: `${percent}%`,
-        backgroundColor: bgcolor
-    }
+    
+    
+        let newMilli = (inputYears)*(1000 * 60 * 60 * 24 * 365)
+                        + (inputDays)*(1000 * 60 * 60 * 24)
+                        +  (inputHours)*(1000 * 60 * 60)
+                        +  (inputMinutes)*(1000 * 60)
+                        +  (inputSeconds)*(1000);
+       
+    
+    
+    const countDownDate = new Date( inputNow + newMilli).getTime();
 
     let interval = useRef();
     
@@ -37,15 +36,17 @@ function Card(props) {
     const [timerHours, setTimerHours] = useState('00');
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
+    const [timerPercent, setTimerPercent] = useState('00');
 
     const startTimer = () => {
-        const countDownDate = new Date(newMilli).getTime();
-        const now = new Date().getTime();
+       
+        
 
         interval = setInterval(() => {
-            
+            const now = new Date().getTime();
             const difference = countDownDate - now;
-            const percent = (now / countDownDate) * 100;
+
+            const percent = ((newMilli -(countDownDate- now))/ newMilli) * 100;
             const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
             const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 365))/ (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -54,16 +55,22 @@ function Card(props) {
 
             if (difference < 0) {
                 clearInterval(interval.current);
+                setTimerPercent(100.00);
             } else {
                 setTimerYears(years);
                 setTimerDays(days);
                 setTimerHours(hours);
                 setTimerMinutes(minutes);
                 setTimerSeconds(seconds);
+                setTimerPercent(percent.toFixed(1));
+
             }
         }, 1000);
     }
-
+    const attributes ={
+        width: `${timerPercent}%`,
+        backgroundColor: bgcolor
+    }
     useEffect(() => {
         startTimer();
         return () => {

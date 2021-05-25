@@ -5,7 +5,13 @@ import Card from './Card'
 
 
 function CardsContainer() {
-    let num = 50;
+    let years = 0;
+    let days = 0;
+    let hours = 0;
+    let minutes = 1;
+    let seconds = 0;
+
+    const now = Date.now();
     
     function giveInfo()
         {
@@ -44,11 +50,12 @@ function CardsContainer() {
              <Card
                 name='testBar'
                 bgcolor='blue'
-                inputYears= {num}
-                inputDays ={num}
-                inputHours ={num}
-                inputMinutes ={num}
-                inputSeconds ={num}
+                inputYears= {years}
+                inputDays ={days}
+                inputHours ={hours}
+                inputMinutes ={minutes}
+                inputSeconds ={seconds}
+                inputNow = {now}
 
             >
 
