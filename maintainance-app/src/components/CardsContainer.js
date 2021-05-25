@@ -1,22 +1,23 @@
-import React from 'react'
+import React, {useState}from 'react'
 import './CardsContainer.css'
 import Card from './Card'
 
 
 
 function CardsContainer() {
-    let years = 0;
-    let days = 0;
-    let hours = 0;
-    let minutes = 1;
-    let seconds = 0;
+   
+    const [years, setYears] = useState('0');
+    const [days, setDays] = useState('0');
+    const [hours, setHours] = useState('0');
+    const [minutes, setMinutes] = useState('0');
+    const [seconds, setSeconds] = useState('0');
 
     const now = Date.now();
     
-    function giveInfo()
+    handleSubmit(event)
         {
-           
-        };
+           console.log(event.target);
+        }
     
     return (
         <div className= 'CC-maintainance-section'>
@@ -27,18 +28,41 @@ function CardsContainer() {
                     </h2>
                 </div>
                 <div className = 'CC-input-section'>
-                    <form name= 'inputForm'>
+                    <form name= 'inputForm' onSubmit= {this.handleSubmit}>
                         <label>
                             NAME
                         </label>
-                        <input type= 'text'>
+                        <input name = "nameField" type= 'text'>
                         </input>
                         <label>
                             How Long?
                         </label>
-                        <input type= 'text'>
+                        <label>
+                            Years
+                        </label>
+                        <input name = "yearField" type= 'text'>
                         </input>
-                        <button onClick= {giveInfo()}>
+                        <label>
+                            Days
+                        </label>
+                        <input name = "dayField" type= 'text'>
+                        </input>
+                        <label>
+                            Hours
+                        </label>
+                        <input name = "hourField" type= 'text'>
+                        </input>
+                        <label>
+                            Minutes
+                        </label>
+                        <input name = "minuteField" type= 'text'>
+                        </input>
+                        <label>
+                            Seconds
+                        </label>
+                        <input name = "secondField" type= 'text'>
+                        </input>
+                        <button>
                             submit
                         </button>
                     </form>

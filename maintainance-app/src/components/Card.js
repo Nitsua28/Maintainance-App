@@ -62,7 +62,7 @@ function Card(props) {
                 setTimerHours(hours);
                 setTimerMinutes(minutes);
                 setTimerSeconds(seconds);
-                setTimerPercent(percent.toFixed(1));
+                setTimerPercent(percent.toFixed(2));
 
             }
         }, 1000);
