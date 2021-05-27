@@ -3,7 +3,7 @@
     display: flex;
     flex-flow: column;
     flex: 1;
-    margin: 0 1rem;
+    margin: 2rem;
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(56, 125, 255, 0.17);
     -webkit-filter: drop-shadow(0 6px 10px rgba(56, 125, 255, 0.017));

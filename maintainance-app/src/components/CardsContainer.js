@@ -1,8 +1,8 @@
-import React, {useState}from 'react'
+import React, {useState,useEffect}from 'react'
 import './CardsContainer.css'
 import Card from './Card'
 
-
+const now = Date.now();
 
 function CardsContainer() {
    
@@ -13,6 +13,8 @@ function CardsContainer() {
     const [tempMinutes, tempSetMinutes] = useState('0');
     const [tempSeconds, tempSetSeconds] = useState('0');
 
+    const [testitout, settestitout] = useState(false);
+
     const [name, setName] = useState('testBar');
     const [years, setYears] = useState('0');
     const [days, setDays] = useState('0');
@@ -20,7 +22,33 @@ function CardsContainer() {
     const [minutes, setMinutes] = useState('0');
     const [seconds, setSeconds] = useState('0');
 
-    const now = Date.now();
+    
+    let cardArray = [
+        {id:'first', n:'card1', y: 1, d: 1, h: 1, m: 1, s:1},
+        {id:'second', n:'card2', y: 2, d: 2, h: 2, m: 2, s:2}
+    ]
+    
+    const reRenderCards=() =>{
+        return(
+            cardArray.map((item) => (
+                <Card key={item.id} 
+                name={item.n}
+                bgcolor='blue'
+                inputYears= {item.y}
+                inputDays ={item.d}
+                inputHours ={item.h}
+                inputMinutes ={item.m}
+                inputSeconds ={item.s}
+                inputNow = {now}/>
+            ))
+        )
+    }
+    useEffect(()=>{
+        cardArray.push(
+            {id:'test', n:'test', y: 1, d: 1, h: 1, m: 1, s:1},
+        );
+        console.log(cardArray);
+    }, [testitout]);
     
     const handleSubmit = (e) =>
         {
@@ -32,8 +60,13 @@ function CardsContainer() {
             setHours(tempHours);
             setMinutes(tempMinutes);
             setSeconds(tempSeconds);
+
+            cardArray.push(
+                {id:'test', n:'test', y: 1, d: 1, h: 1, m: 1, s:1},
+            );
+            settestitout(true);
         }
-    
+        
     return (
         <div className= 'CC-maintainance-section'>
             <div className = 'CC-header-section'>
@@ -98,7 +131,7 @@ function CardsContainer() {
             </div>
             <div className= 'CC-cards-section'>
                 
-             <Card
+             {/* <Card
                 name={name}
                 bgcolor='blue'
                 inputYears= {years}
@@ -110,7 +143,10 @@ function CardsContainer() {
 
             >
 
-            </Card>
+            </Card> */}
+            
+            {reRenderCards()}
+            
 
             </div>
         </div>
