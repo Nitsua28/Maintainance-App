@@ -14,9 +14,10 @@ function CardsContainer() {
 
     const now = Date.now();
     
-    handleSubmit(event)
+    const handleSubmit = (event) =>
         {
-           console.log(event.target);
+            event.preventDefault();
+           console.log(event);
         }
     
     return (
@@ -28,11 +29,11 @@ function CardsContainer() {
                     </h2>
                 </div>
                 <div className = 'CC-input-section'>
-                    <form name= 'inputForm' onSubmit= {this.handleSubmit}>
+                    <form name= 'inputForm' onSubmit= {handleSubmit()}>
                         <label>
                             NAME
                         </label>
-                        <input name = "nameField" type= 'text'>
+                        <input id = "nameField" type= 'text'>
                         </input>
                         <label>
                             How Long?
