@@ -13,7 +13,7 @@ function CardsContainer() {
     const [tempMinutes, tempSetMinutes] = useState('0');
     const [tempSeconds, tempSetSeconds] = useState('0');
 
-    const [testitout, settestitout] = useState(false);
+    const [testitout, settestitout] = useState(0);
 
     const [name, setName] = useState('testBar');
     const [years, setYears] = useState('0');
@@ -44,10 +44,11 @@ function CardsContainer() {
         )
     }
     useEffect(()=>{
-        cardArray.push(
+        if (testitout > 0)
+        {cardArray.push(
             {id:'test', n:'test', y: 1, d: 1, h: 1, m: 1, s:1},
         );
-        console.log(cardArray);
+        console.log(cardArray);}
     }, [testitout]);
     
     const handleSubmit = (e) =>
@@ -64,7 +65,7 @@ function CardsContainer() {
             cardArray.push(
                 {id:'test', n:'test', y: 1, d: 1, h: 1, m: 1, s:1},
             );
-            settestitout(true);
+            settestitout(settestitout => settestitout + 1);
         }
         
     return (
