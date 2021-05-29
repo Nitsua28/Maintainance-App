@@ -24,8 +24,10 @@ function CardsContainer() {
 
     
     let cardArray = [
-        {id:'first', n:'card1', y: 1, d: 1, h: 1, m: 1, s:1},
-        {id:'second', n:'card2', y: 2, d: 2, h: 2, m: 2, s:2}
+        {id:'first', n:'Bananas', y: 0, d: 5, h: 0, m: 0, s:0},
+        {id:'second', n:'Potatos', y: 0, d: 14, h: 0, m: 0, s:0},
+        {id:'third', n:'Rice', y: 5, d: 0, h: 0, m: 0, s:0},
+        {id:'fourth', n:'Pick Nose', y: 0, d: 0, h: 0, m: 1, s:0}
     ]
     
     const reRenderCards=() =>{
@@ -43,13 +45,13 @@ function CardsContainer() {
             ))
         )
     }
-    useEffect(()=>{
-        if (testitout > 0)
-        {cardArray.push(
-            {id:'test', n:'test', y: 1, d: 1, h: 1, m: 1, s:1},
-        );
-        console.log(cardArray);}
-    }, [testitout]);
+    // useEffect(()=>{
+    //     if (testitout > 0)
+    //     {cardArray.push(
+    //         {id:'test', n:'test', y: 1, d: 1, h: 1, m: 1, s:1},
+    //     );
+    //     console.log(cardArray);}
+    // }, [testitout]);
     
     const handleSubmit = (e) =>
         {
