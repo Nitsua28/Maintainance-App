@@ -3,9 +3,9 @@ App to track the maintainance time of when to clean things, when your groceries 
 
 ## Things to do
 1. Cards
-  - end button
+    - end button
 2. Input
-  - css
-  - on submit only
+    - css
+    - on submit only
 3. append card
-  - css grid
+    - css grid
