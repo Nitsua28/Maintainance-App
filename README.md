@@ -1,6 +1,7 @@
 # Maintainance-App
 App to track the maintainance time of when to clean things, when your groceries turn rotten, when to do an oil change on your car etc.
-
+## Current version
+Just displays sample cards but no input functionality.
 ## Things to do
 1. Cards
     - end button
