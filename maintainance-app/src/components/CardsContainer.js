@@ -5,7 +5,7 @@ import Card from './Card'
 const now = Date.now();
 
 function CardsContainer() {
-   
+
     const [tempName, tempSetName] = useState('testBar');
     const [tempYears, tempSetYears] = useState('0');
     const [tempDays, tempSetDays] = useState('0');
@@ -22,18 +22,19 @@ function CardsContainer() {
     const [minutes, setMinutes] = useState('0');
     const [seconds, setSeconds] = useState('0');
 
-    
+
+
     let cardArray = [
         {id:'first', n:'Bananas', y: 0, d: 5, h: 0, m: 0, s:0},
         {id:'second', n:'Potatos', y: 0, d: 14, h: 0, m: 0, s:0},
         {id:'third', n:'Rice', y: 5, d: 0, h: 0, m: 0, s:0},
         {id:'fourth', n:'Pick Flowers', y: 0, d: 0, h: 0, m: 1, s:0}
     ]
-    
+
     const reRenderCards=() =>{
         return(
             cardArray.map((item) => (
-                <Card key={item.id} 
+                <Card key={item.id}
                 name={item.n}
                 bgcolor='blue'
                 inputYears= {item.y}
@@ -52,7 +53,7 @@ function CardsContainer() {
     //     );
     //     console.log(cardArray);}
     // }, [testitout]);
-    
+
     const handleSubmit = (e) =>
         {
             e.preventDefault();
@@ -69,7 +70,7 @@ function CardsContainer() {
             );
             settestitout(settestitout => settestitout + 1);
         }
-        
+
     return (
         <div className= 'CC-maintainance-section'>
             <div className = 'CC-header-section'>
@@ -83,7 +84,7 @@ function CardsContainer() {
                         <label>
                             NAME
                         </label>
-                        <input  id = "nameField" 
+                        <input  id = "nameField"
                                 type= 'text'
                                 onChange= {e => tempSetName(e.target.value)}>
                         </input>
@@ -93,35 +94,35 @@ function CardsContainer() {
                         <label>
                             Years
                         </label>
-                        <input  name = "yearField" 
+                        <input  name = "yearField"
                                 type= 'text'
                                 onChange= {e => tempSetYears(e.target.value)}>
                         </input>
                         <label>
                             Days
                         </label>
-                        <input  name = "dayField" 
+                        <input  name = "dayField"
                                 type= 'text'
                                 onChange= {e => tempSetDays(e.target.value)}>
                         </input>
                         <label>
                             Hours
                         </label>
-                        <input  name = "hourField" 
+                        <input  name = "hourField"
                                 type= 'text'
                                 onChange= {e => tempSetHours(e.target.value)}>
                         </input>
                         <label>
                             Minutes
                         </label>
-                        <input  name = "minuteField" 
+                        <input  name = "minuteField"
                                 type= 'text'
                                 onChange= {e => tempSetMinutes(e.target.value)}>
                         </input>
                         <label>
                             Seconds
                         </label>
-                        <input  name = "secondField" 
+                        <input  name = "secondField"
                                 type= 'text'
                                 onChange= {e => tempSetSeconds(e.target.value)}>
                         </input>
@@ -129,11 +130,11 @@ function CardsContainer() {
                             submit
                         </button>
                     </form>
-                
+
                 </div>
             </div>
             <div className= 'CC-cards-section'>
-                
+
              {/* <Card
                 name={name}
                 bgcolor='blue'
@@ -147,9 +148,9 @@ function CardsContainer() {
             >
 
             </Card> */}
-            
+
             {reRenderCards()}
-            
+
 
             </div>
         </div>
