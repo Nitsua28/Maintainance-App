@@ -29,6 +29,7 @@ function CardsContainer() {
         {id:'second', n:'Potatos', y: 0, d: 14, h: 0, m: 0, s:0},
         {id:'third', n:'Rice', y: 5, d: 0, h: 0, m: 0, s:0},
         {id:'fourth', n:'Pick Flowers', y: 0, d: 0, h: 0, m: 1, s:0}
+        //in database store the end date and retreive it and calulate based on present date
     ]
 
     const reRenderCards=() =>{
